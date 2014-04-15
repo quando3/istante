@@ -19,6 +19,7 @@
 		6570A9E218FBE0CD0099318F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6570A9CA18FBE0CD0099318F /* UIKit.framework */; };
 		6570A9EA18FBE0CD0099318F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6570A9E818FBE0CD0099318F /* InfoPlist.strings */; };
 		6570A9EC18FBE0CD0099318F /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6570A9EB18FBE0CD0099318F /* ToDoListTests.m */; };
+		6570A9F618FD1E1A0099318F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6570A9F518FD1E1A0099318F /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		6570A9E718FBE0CD0099318F /* ToDoListTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ToDoListTests-Info.plist"; sourceTree = "<group>"; };
 		6570A9E918FBE0CD0099318F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6570A9EB18FBE0CD0099318F /* ToDoListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToDoListTests.m; sourceTree = "<group>"; };
+		6570A9F518FD1E1A0099318F /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 			children = (
 				6570A9D518FBE0CD0099318F /* XYZAppDelegate.h */,
 				6570A9D618FBE0CD0099318F /* XYZAppDelegate.m */,
+				6570A9F518FD1E1A0099318F /* Main.storyboard */,
 				6570A9D818FBE0CD0099318F /* Images.xcassets */,
 				6570A9CD18FBE0CD0099318F /* Supporting Files */,
 			);
@@ -220,6 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6570A9F618FD1E1A0099318F /* Main.storyboard in Resources */,
 				6570A9D118FBE0CD0099318F /* InfoPlist.strings in Resources */,
 				6570A9D918FBE0CD0099318F /* Images.xcassets in Resources */,
 			);
@@ -358,6 +362,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToDoList/ToDoList-Prefix.pch";
 				INFOPLIST_FILE = "ToDoList/ToDoList-Info.plist";
@@ -372,6 +377,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ToDoList/ToDoList-Prefix.pch";
 				INFOPLIST_FILE = "ToDoList/ToDoList-Info.plist";
