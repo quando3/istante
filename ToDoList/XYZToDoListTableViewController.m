@@ -78,9 +78,10 @@
     return [self.pmaToDoItems count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellID = @"ListPrototypeCell";
+    static NSString *CellID = @"PrototypeCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellID
                                                             forIndexPath:indexPath];
@@ -88,6 +89,8 @@
     // Configure the cell
     XYZToDoItem *pItem = [self.pmaToDoItems objectAtIndex:indexPath.row];
     cell.textLabel.text = pItem.pItemName;
+    cell.accessoryType = pItem.bCompleted ?
+                         UITableViewCellAccessoryCheckmark : UITableViewCellAccessoryNone;
     
     return cell;
 }
@@ -140,5 +143,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    XYZToDoItem *pItem = [self.pmaToDoItems objectAtIndex:indexPath.row];
+    pItem.bCompleted = !pItem.bCompleted;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+}
 
 @end
