@@ -10,6 +10,8 @@
 
 @interface XYZAddToDoItemViewController ()
 
+@property (weak, nonatomic) IBOutlet UITextField *textField;
+
 @end
 
 @implementation XYZAddToDoItemViewController
