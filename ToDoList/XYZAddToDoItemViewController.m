@@ -18,6 +18,19 @@
 
 @implementation XYZAddToDoItemViewController
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if (sender != self.doneButton) {
+        return;
+    }
+    
+    if (self.textField.text.length > 0) {
+        self.pToDoItem = [[XYZToDoItem alloc] init];
+        self.pToDoItem.pItemName = self.textField.text;
+        self.pToDoItem.bCompleted = NO;
+    }
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

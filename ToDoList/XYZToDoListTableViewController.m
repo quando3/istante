@@ -8,6 +8,7 @@
 
 #import "XYZToDoListTableViewController.h"
 #import "XYZToDoItem.h"
+#import "XYZAddToDoItemViewController.h"
 
 @interface XYZToDoListTableViewController ()
 
@@ -19,6 +20,12 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
+    XYZAddToDoItemViewController *pSource = [segue sourceViewController];
+    XYZToDoItem *pItem = pSource.pToDoItem;
+    if (pItem != nil) {
+        [self.pmaToDoItems addObject:pItem];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)addToDoItem:(NSString *)pstrItemName
