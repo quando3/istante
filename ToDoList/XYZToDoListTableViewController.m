@@ -7,8 +7,11 @@
 //
 
 #import "XYZToDoListTableViewController.h"
+#import "XYZToDoItem.h"
 
 @interface XYZToDoListTableViewController ()
+
+@property NSMutableArray    * pmaToDoItems;
 
 @end
 
@@ -16,6 +19,21 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue
 {
+}
+
+- (void)addToDoItem:(NSString *)pstrItemName
+{
+    XYZToDoItem * pItem = [[XYZToDoItem alloc] init];
+    pItem.pItemName = pstrItemName;
+    [self.pmaToDoItems addObject:pItem];
+}
+
+- (void)loadInitialData
+{
+    [self addToDoItem:@"Buy milk"];
+    [self addToDoItem:@"Buy tomato"];
+    [self addToDoItem:@"Buy eggs"];
+    [self addToDoItem:@"Read a book"];
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -30,6 +48,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.pmaToDoItems = [[NSMutableArray alloc] init];
+    [self loadInitialData];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -48,28 +68,29 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.pmaToDoItems count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    static NSString *CellID = @"ListPrototypeCell";
     
-    // Configure the cell...
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellID
+                                                            forIndexPath:indexPath];
+    
+    // Configure the cell
+    XYZToDoItem *pItem = [self.pmaToDoItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = pItem.pItemName;
     
     return cell;
 }
-*/
 
 /*
 // Override to support conditional editing of the table view.
