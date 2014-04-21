@@ -43,6 +43,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="doneButton" destination="OhS-GQ-Hdw" id="YeB-fP-Qqr"/>
                         <outlet property="textField" destination="U9A-n2-0Uv" id="zjl-tz-Joe"/>
                     </connections>
                 </viewController>
